@@ -1,3 +1,7 @@
+name: Ruff
+
+on: [push]
+
 name: "Ruff GH Action"
 description: "A GH Action of Ruff, the extremely fast Python linter."
 author: "The Ruff Community"
