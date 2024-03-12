@@ -2,7 +2,8 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '0 0 1 ? * MON,TUE,WED,THU,FRI *' # Weekday at 01:00
+    - cron: "* * 1 * 1-5"
+    - cron: "* * 1 * 1-5"
 
 jobs:
   build:
