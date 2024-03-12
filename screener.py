@@ -7,8 +7,9 @@ from typing import Dict, List
 
 import pandas as pd
 import yfinance as yf
+from pandas_ta import adx
 
-from tools import adx, atr, doji, resample_week, sma
+from tools import atr, doji, resample_week, sma
 
 
 def get_symbols() -> List[str]:
@@ -113,7 +114,7 @@ def main():
         df["sma_5"] = sma(df.Close, 5)
         df["sma_200"] = sma(df.Close, 200)
         df["atr_10"] = atr(df, 10, "sma")
-        df["adx_14"] = adx(df)
+        df["adx_14"] = adx(df.High, df.Low, df.Close)["ADX_14"]
 
         df["close_pct_5"] = df.Close.pct_change(5)
         df["close_pct_60"] = df.Close.pct_change(60)
@@ -153,7 +154,7 @@ def main():
             .reindex(df.index, method="pad")
         )
 
-        df_week["adx_14"] = adx(df_week)
+        df_week["adx_10"] = adx(df_week.High, df_week.Low, df_week.Close, 10)["ADX_10"]
 
         day = df.iloc[-1].to_dict()
         week = df_week.iloc[-1].to_dict()
@@ -173,7 +174,7 @@ def main():
             day["atr_distance_high_8"] > 1.8,
             day["atr_distance_low_3"] < 1.5,
             day["up_volume_5"] > day["down_volume_5"],
-            week["adx_14"] > 25,
+            week["adx_10"] > 20,
         ]
 
         # If the long pattern matches, add the symbol to the daily screener
@@ -187,7 +188,7 @@ def main():
                     "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
                     "distance_tp_atr": round(day["atr_distance_high_8"], 1),
                     "adx_day": round(day["adx_14"]),
-                    "adx_week": round(week["adx_14"]),
+                    "adx_week": round(week["adx_10"]),
                     "up_volume": int(day["up_volume_5"]),
                     "down_volume": int(day["down_volume_5"]),
                 }
@@ -208,7 +209,7 @@ def main():
             day["atr_distance_low_8"] > 1.8,
             day["atr_distance_high_3"] < 1.5,
             day["up_volume_5"] < day["down_volume_5"],
-            week["adx_14"] > 25,
+            week["adx_10"] > 20,
         ]
 
         # If the short pattern matches, add the symbol to the daily screener
@@ -222,7 +223,7 @@ def main():
                     "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
                     "distance_tp_atr": round(day["atr_distance_low_8"], 1),
                     "adx_day": round(day["adx_14"]),
-                    "adx_week": round(week["adx_14"]),
+                    "adx_week": round(week["adx_10"]),
                     "up_volume": int(day["up_volume_5"]),
                     "down_volume": int(day["down_volume_5"]),
                 }
