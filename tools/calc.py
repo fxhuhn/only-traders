@@ -35,7 +35,7 @@ def resample_week(df: pd.DataFrame) -> pd.DataFrame:
         Close=("Close", "last"),
         Volume=("Volume", "sum"),
     )
-    return df
+    return df.reset_index().set_index("Date")
 
 
 def sma(close: pd.Series, period: int = 200) -> pd.Series:
