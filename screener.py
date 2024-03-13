@@ -96,7 +96,7 @@ def main():
 
     for symbol in dfs.keys():
         df = dfs[symbol.lower()]["2020-01-01":].copy()
-        df_week = resample_week(df)
+        df_week = resample_week(df.copy())
 
         # Minimum quantity of stockdata is 200 trading days
         if len(df) < 200:
@@ -111,6 +111,7 @@ def main():
             continue
 
         # Apply the necessary indicators for stock data
+        df["sma_3"] = sma(df.Close, 3)
         df["sma_5"] = sma(df.Close, 5)
         df["sma_200"] = sma(df.Close, 200)
         df["atr_10"] = atr(df, 10, "sma")
@@ -139,17 +140,17 @@ def main():
         df["atr_distance_high_8"] = (df.high_max_8 - df.High) / df.atr_10
         df["atr_distance_low_8"] = (df.Low - df.low_min_8) / df.atr_10
 
-        df["down_volume_5"] = (
-            df[df.Close < df.sma_5]
+        df["down_volume"] = (
+            df[df.Close < df.sma_3]
             .Volume.dropna()
-            .rolling(5)
+            .rolling(3)
             .mean()
             .reindex(df.index, method="pad")
         )
-        df["up_volume_5"] = (
-            df[df.Close > df.sma_5]
+        df["up_volume"] = (
+            df[df.Close > df.sma_3]
             .Volume.dropna()
-            .rolling(5)
+            .rolling(3)
             .mean()
             .reindex(df.index, method="pad")
         )
@@ -173,7 +174,7 @@ def main():
             day["close_pct_60"] > 0,
             day["atr_distance_high_8"] > 1.8,
             day["atr_distance_low_3"] < 1.5,
-            day["up_volume_5"] > day["down_volume_5"],
+            day["up_volume"] > day["down_volume"],
             week["adx_10"] > 20,
         ]
 
@@ -189,8 +190,8 @@ def main():
                     "distance_tp_atr": round(day["atr_distance_high_8"], 1),
                     "adx_day": round(day["adx_14"]),
                     "adx_week": round(week["adx_10"]),
-                    "up_volume": int(day["up_volume_5"]),
-                    "down_volume": int(day["down_volume_5"]),
+                    "up_volume": int(day["up_volume"]),
+                    "down_volume": int(day["down_volume"]),
                 }
             )
 
@@ -208,7 +209,7 @@ def main():
             day["close_pct_60"] < 0,
             day["atr_distance_low_8"] > 1.8,
             day["atr_distance_high_3"] < 1.5,
-            day["up_volume_5"] < day["down_volume_5"],
+            day["up_volume"] < day["down_volume"],
             week["adx_10"] > 20,
         ]
 
@@ -224,8 +225,8 @@ def main():
                     "distance_tp_atr": round(day["atr_distance_low_8"], 1),
                     "adx_day": round(day["adx_14"]),
                     "adx_week": round(week["adx_10"]),
-                    "up_volume": int(day["up_volume_5"]),
-                    "down_volume": int(day["down_volume_5"]),
+                    "up_volume": int(day["up_volume"]),
+                    "down_volume": int(day["down_volume"]),
                 }
             )
 
