@@ -73,7 +73,7 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
             for symbol in stock_data.columns.get_level_values(0).unique():
                 # drop unclear items
                 df = stock_data[symbol]
-                df = df[~(df.High == df.Low) & ~(df.Open == df.Close)]
+                df = df[~(df.High == df.Low)]
                 df = df.dropna()
                 df.index = pd.to_datetime(df.index)
 
@@ -143,14 +143,14 @@ def main():
         df["down_volume"] = (
             df[df.Close < df.sma_3]
             .Volume.dropna()
-            .rolling(3)
+            .rolling(5)
             .mean()
             .reindex(df.index, method="pad")
         )
         df["up_volume"] = (
             df[df.Close > df.sma_3]
             .Volume.dropna()
-            .rolling(3)
+            .rolling(5)
             .mean()
             .reindex(df.index, method="pad")
         )
