@@ -184,7 +184,8 @@ def main():
                 {
                     "direction": "LONG",
                     "symbol": symbol,
-                    "kk": day["High"],
+                    "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                    "kk": day["High"] + max(0.001 * day["Low"], 0.02),
                     "sl": round(day["High"] - 0.9 * day["atr_10"], 2),
                     "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
                     "distance_tp_atr": round(day["atr_distance_high_8"], 1),
@@ -219,7 +220,8 @@ def main():
                 {
                     "direction": "SHORT",
                     "symbol": symbol,
-                    "kk": day["Low"],
+                    "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                    "kk": day["Low"] - max(0.001 * day["Low"], 0.02),
                     "sl": round(day["Low"] + 0.9 * day["atr_10"], 2),
                     "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
                     "distance_tp_atr": round(day["atr_distance_low_8"], 1),
@@ -230,8 +232,16 @@ def main():
                 }
             )
 
-    print(pd.DataFrame(export_list).sort_values(by="symbol"))
-    pd.DataFrame(export_list).sort_values(by="symbol").to_csv(
+    df_screener = pd.DataFrame(export_list).sort_values(by="symbol")
+    print(df_screener)
+    df_screener["symbol"].to_csv(
+        f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.txt",
+        header=None,
+        index=None,
+        sep=" ",
+        mode="a",
+    )
+    df_screener.to_csv(
         f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.csv", index=False
     )
 
