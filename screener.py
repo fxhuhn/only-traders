@@ -52,7 +52,7 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
         # delete stock data of older than 12h
         file_time = os.path.getmtime(filename)
         file_age = datetime.datetime.now() - datetime.datetime.fromtimestamp(file_time)
-        if file_age.seconds / 3600 > 12:
+        if file_age.days > 0 or file_age.seconds / 3600 > 12:
             os.remove(filename)
 
         # use current stock data
@@ -83,6 +83,26 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
         with open(filename, "wb") as file:
             pickle.dump(dfs, file)
     return dfs
+
+
+def symbol_meets_preferred_criteria(symbol: str) -> bool:
+    """
+    check if stock is not a real estate and home country is us
+
+    Args:
+        symbol (str): _description_
+
+    Returns:
+        bool: _description_
+    """
+
+    stock_metadata = yf.Ticker(symbol).info
+
+    if stock_metadata.get("sector") == "Real Estate":
+        return False
+    if stock_metadata.get("country") != "United States":
+        return False
+    return True
 
 
 def main():
@@ -180,21 +200,22 @@ def main():
 
         # If the long pattern matches, add the symbol to the daily screener
         if all(long_condition):
-            export_list.append(
-                {
-                    "direction": "LONG",
-                    "symbol": symbol,
-                    "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
-                    "kk": day["High"] + max(0.001 * day["Low"], 0.02),
-                    "sl": round(day["High"] - 0.9 * day["atr_10"], 2),
-                    "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
-                    "distance_tp_atr": round(day["atr_distance_high_8"], 1),
-                    "adx_day": round(day["adx_14"]),
-                    "adx_week": round(week["adx_10"]),
-                    "up_volume": int(day["up_volume"]),
-                    "down_volume": int(day["down_volume"]),
-                }
-            )
+            if symbol_meets_preferred_criteria(symbol):
+                export_list.append(
+                    {
+                        "direction": "LONG",
+                        "symbol": symbol,
+                        "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                        "kk": round(day["High"] + max(0.001 * day["Low"], 0.02), 2),
+                        "sl": round(day["High"] - 0.9 * day["atr_10"], 2),
+                        "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
+                        "distance_tp_atr": round(day["atr_distance_high_8"], 1),
+                        "adx_day": round(day["adx_14"]),
+                        "adx_week": round(week["adx_10"]),
+                        "up_volume": int(day["up_volume"]),
+                        "down_volume": int(day["down_volume"]),
+                    }
+                )
 
         # Pattern for short
         short_condition = [
@@ -216,21 +237,22 @@ def main():
 
         # If the short pattern matches, add the symbol to the daily screener
         if all(short_condition):
-            export_list.append(
-                {
-                    "direction": "SHORT",
-                    "symbol": symbol,
-                    "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
-                    "kk": day["Low"] - max(0.001 * day["Low"], 0.02),
-                    "sl": round(day["Low"] + 0.9 * day["atr_10"], 2),
-                    "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
-                    "distance_tp_atr": round(day["atr_distance_low_8"], 1),
-                    "adx_day": round(day["adx_14"]),
-                    "adx_week": round(week["adx_10"]),
-                    "up_volume": int(day["up_volume"]),
-                    "down_volume": int(day["down_volume"]),
-                }
-            )
+            if symbol_meets_preferred_criteria(symbol):
+                export_list.append(
+                    {
+                        "direction": "SHORT",
+                        "symbol": symbol,
+                        "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                        "kk": round(day["Low"] - max(0.001 * day["Low"], 0.02), 2),
+                        "sl": round(day["Low"] + 0.9 * day["atr_10"], 2),
+                        "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
+                        "distance_tp_atr": round(day["atr_distance_low_8"], 1),
+                        "adx_day": round(day["adx_14"]),
+                        "adx_week": round(week["adx_10"]),
+                        "up_volume": int(day["up_volume"]),
+                        "down_volume": int(day["down_volume"]),
+                    }
+                )
 
     df_screener = pd.DataFrame(export_list).sort_values(by="symbol")
     print(df_screener)
