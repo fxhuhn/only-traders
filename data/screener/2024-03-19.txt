@@ -1,0 +1,4 @@
+hpe
+net
+pltr
+ttd
