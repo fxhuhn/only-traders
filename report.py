@@ -71,37 +71,33 @@ def main():
         if row["direction"] == "LONG":
             if df.iloc[0].High > row["kk"]:
                 trade["entry"] = max(df.iloc[0].Open, row["kk"])
-            else:
-                continue
 
-            if df.High.max() > row["tp"]:
-                trade["exit"] = row["tp"]
-                trade["status"] = "TP"
-            elif df.Low.min() < row["sl"]:
-                trade["exit"] = row["sl"]
-                trade["status"] = "SL"
-            else:
-                trade["exit"] = df.iloc[-1].Close
-                trade["status"] = "TE"
-            trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
+                if df.High.max() > row["tp"]:
+                    trade["exit"] = row["tp"]
+                    trade["status"] = "TP"
+                elif df.Low.min() < row["sl"]:
+                    trade["exit"] = row["sl"]
+                    trade["status"] = "SL"
+                else:
+                    trade["exit"] = df.iloc[-1].Close
+                    trade["status"] = "TE"
+                trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
 
         if row["direction"] == "SHORT":
             if df.iloc[0].Low < row["kk"]:
                 trade["entry"] = min(df.iloc[0].Open, row["kk"])
-            else:
-                continue
 
-            if df.Low.min() < row["tp"]:
-                trade["exit"] = row["tp"]
-                trade["status"] = "TP"
-            elif df.High.max() > row["sl"]:
-                trade["exit"] = row["sl"]
-                trade["status"] = "SL"
-            else:
-                trade["exit"] = df.iloc[-1].Close
-                trade["status"] = "TE"
+                if df.Low.min() < row["tp"]:
+                    trade["exit"] = row["tp"]
+                    trade["status"] = "TP"
+                elif df.High.max() > row["sl"]:
+                    trade["exit"] = row["sl"]
+                    trade["status"] = "SL"
+                else:
+                    trade["exit"] = df.iloc[-1].Close
+                    trade["status"] = "TE"
 
-            trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
+                trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
 
         export_list.append(trade)
 
