@@ -133,6 +133,9 @@ def main():
         # Apply the necessary indicators for stock data
         df["sma_3"] = sma(df.Close, 3)
         df["sma_5"] = sma(df.Close, 5)
+
+        df["ema_10"] = sma(df.Close, 10)
+
         df["sma_200"] = sma(df.Close, 200)
         df["atr_10"] = atr(df, 10, "sma")
         df["adx_14"] = adx(df.High, df.Low, df.Close)["ADX_14"]
@@ -214,6 +217,10 @@ def main():
                         "adx_week": round(week["adx_10"]),
                         "up_volume": int(day["up_volume"]),
                         "down_volume": int(day["down_volume"]),
+                        "ema_reversal": 1
+                        if (day["High"] > day["ema_10"])
+                        and (day["Low"] < day["ema_10"])
+                        else 0,
                     }
                 )
 
@@ -251,6 +258,10 @@ def main():
                         "adx_week": round(week["adx_10"]),
                         "up_volume": int(day["up_volume"]),
                         "down_volume": int(day["down_volume"]),
+                        "ema_reversal": 1
+                        if (day["High"] > day["ema_10"])
+                        and (day["Low"] < day["ema_10"])
+                        else 0,
                     }
                 )
 
