@@ -195,7 +195,7 @@ def main():
             day["atr_distance_high_8"] > 1.8,
             day["atr_distance_low_3"] < 1.5,
             day["up_volume"] > day["down_volume"],
-            week["adx_10"] > 20,
+            # week["adx_10"] > 20,
         ]
 
         # If the long pattern matches, add the symbol to the daily screener
@@ -232,7 +232,7 @@ def main():
             day["atr_distance_low_8"] > 1.8,
             day["atr_distance_high_3"] < 1.5,
             day["up_volume"] < day["down_volume"],
-            week["adx_10"] > 20,
+            # week["adx_10"] > 20,
         ]
 
         # If the short pattern matches, add the symbol to the daily screener
