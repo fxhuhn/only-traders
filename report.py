@@ -72,32 +72,86 @@ def main():
             if df.iloc[0].High > row["kk"]:
                 trade["entry"] = max(df.iloc[0].Open, row["kk"])
 
-                if df.High.max() > row["tp"]:
+                tp = (
+                    df.index.get_loc((df.High > row["tp"]).idxmax())
+                    if any(df["High"] > row["tp"])
+                    else 10
+                )
+                sl = (
+                    df.index.get_loc((df["Low"] < row["sl"]).idxmax())
+                    if any(df["Low"] < row["sl"])
+                    else 10
+                )
+
+                if sl == 0:
+                    sl = 10
+                if tp == 0:
+                    tp = 10
+
+                if len(df) < 5:
+                    trade["status"] = "-"
+                    trade["duration"] = len(df)
+                    trade["r"] = (df.iloc[-1].Close - trade["entry"]) / trade["risk"]
+                elif tp < sl:
                     trade["exit"] = row["tp"]
                     trade["status"] = "TP"
-                elif df.Low.min() < row["sl"]:
+                    trade["duration"] = tp
+                    trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
+                elif tp > sl:
                     trade["exit"] = row["sl"]
                     trade["status"] = "SL"
-                else:
+                    trade["duration"] = sl
+                    trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
+                elif tp == sl == 10:
                     trade["exit"] = df.iloc[-1].Close
                     trade["status"] = "TE"
-                trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
+                    trade["r"] = (trade["exit"] - trade["entry"]) / trade["risk"]
+                    trade["duration"] = len(df)
+                else:
+                    print(f"{tp=}{sl=}")
 
         if row["direction"] == "SHORT":
             if df.iloc[0].Low < row["kk"]:
                 trade["entry"] = min(df.iloc[0].Open, row["kk"])
 
-                if df.Low.min() < row["tp"]:
+                tp = (
+                    df.index.get_loc((df.Low < row["tp"]).idxmax())
+                    if any(df["Low"] < row["tp"])
+                    else 10
+                )
+                sl = (
+                    df.index.get_loc((df["High"] > row["sl"]).idxmax())
+                    if any(df["High"] > row["sl"])
+                    else 10
+                )
+
+                # dirty fix for first bar issue
+                if sl == 0:
+                    sl = 10
+                if tp == 0:
+                    tp = 10
+
+                if len(df) < 5:
+                    trade["status"] = "-"
+                    trade["duration"] = len(df)
+                    trade["r"] = (trade["entry"] - df.iloc[-1].Close) / trade["risk"]
+                elif tp < sl:
                     trade["exit"] = row["tp"]
                     trade["status"] = "TP"
-                elif df.High.max() > row["sl"]:
+                    trade["duration"] = tp
+                    trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
+                elif tp > sl:
                     trade["exit"] = row["sl"]
                     trade["status"] = "SL"
-                else:
+                    trade["duration"] = sl
+                    trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
+                elif tp == sl == 10:
                     trade["exit"] = df.iloc[-1].Close
                     trade["status"] = "TE"
-
-                trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
+                    trade["r"] = (trade["entry"] - trade["exit"]) / trade["risk"]
+                    trade["duration"] = len(df)
+                else:
+                    print(f"{tp=}{sl=}")
 
         export_list.append(trade)
 
