@@ -1,4 +1,4 @@
-name: daily screening
+name: weekly report
 
 on:
   schedule:
