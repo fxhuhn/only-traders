@@ -74,19 +74,14 @@ def main():
 
                 tp = (
                     df.index.get_loc((df.High > row["tp"]).idxmax())
-                    if any(df["High"] > row["tp"])
+                    if any(df[1:].High > row["tp"])
                     else 10
                 )
                 sl = (
-                    df.index.get_loc((df["Low"] < row["sl"]).idxmax())
-                    if any(df["Low"] < row["sl"])
+                    df.index.get_loc((df.Low < row["sl"]).idxmax())
+                    if any(df[1:].Low < row["sl"])
                     else 10
                 )
-
-                if sl == 0:
-                    sl = 10
-                if tp == 0:
-                    tp = 10
 
                 if len(df) < 5:
                     trade["status"] = "-"
@@ -116,20 +111,14 @@ def main():
 
                 tp = (
                     df.index.get_loc((df.Low < row["tp"]).idxmax())
-                    if any(df["Low"] < row["tp"])
+                    if any(df[1:].Low < row["tp"])
                     else 10
                 )
                 sl = (
-                    df.index.get_loc((df["High"] > row["sl"]).idxmax())
-                    if any(df["High"] > row["sl"])
+                    df.index.get_loc((df.High > row["sl"]).idxmax())
+                    if any(df[1:].High > row["sl"])
                     else 10
                 )
-
-                # dirty fix for first bar issue
-                if sl == 0:
-                    sl = 10
-                if tp == 0:
-                    tp = 10
 
                 if len(df) < 5:
                     trade["status"] = "-"
