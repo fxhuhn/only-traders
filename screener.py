@@ -85,6 +85,16 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
     return dfs
 
 
+def triple_witching_day() -> str:
+    today = datetime.date.today()
+    first_day = datetime.date(today.year, int(today.month / 4) + 3, 1)
+    offset = (first_day.weekday() - 4) % 7
+    last_friday = (first_day + datetime.timedelta(days=3 * 7 + offset)).strftime(
+        "%Y-%m-%d"
+    )
+    return last_friday
+
+
 def symbol_meets_preferred_criteria(symbol: str) -> bool:
     """
     check if stock is not a real estate and home country is us
@@ -164,14 +174,14 @@ def main():
         df["atr_distance_low_8"] = (df.Low - df.low_min_8) / df.atr_10
 
         df["down_volume"] = (
-            df[df.Close < df.sma_3]
+            df[(df.Close < df.sma_3) & (df.index != triple_witching_day())]
             .Volume.dropna()
             .rolling(5)
             .mean()
             .reindex(df.index, method="pad")
         )
         df["up_volume"] = (
-            df[df.Close > df.sma_3]
+            df[(df.Close > df.sma_3) & (df.index != triple_witching_day())]
             .Volume.dropna()
             .rolling(5)
             .mean()
