@@ -9,7 +9,7 @@ import pandas as pd
 import yfinance as yf
 from pandas_ta import adx
 
-from tools import atr, doji, resample_week, sma
+from tools import atr, doji, ema, resample_week, sma
 
 
 def get_symbols() -> List[str]:
@@ -134,7 +134,7 @@ def main():
         df["sma_3"] = sma(df.Close, 3)
         df["sma_5"] = sma(df.Close, 5)
 
-        df["ema_10"] = sma(df.Close, 10)
+        df["ema_10"] = ema(df.Close, 10)
 
         df["sma_200"] = sma(df.Close, 200)
         df["atr_10"] = atr(df, 10, "sma")
