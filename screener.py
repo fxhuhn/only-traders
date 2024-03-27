@@ -95,24 +95,22 @@ def triple_witching_day() -> str:
     return last_friday
 
 
-def symbol_meets_preferred_criteria(symbol: str) -> bool:
+def get_symbol_metadata(symbol: str) -> Dict[str, str]:
     """
-    check if stock is not a real estate and home country is us
+    returns sector and  country of symbol
 
     Args:
         symbol (str): _description_
 
     Returns:
-        bool: _description_
+        sector, country: _description_
     """
-
     stock_metadata = yf.Ticker(symbol).info
-
-    if stock_metadata.get("sector") == "Real Estate":
-        return False
-    if stock_metadata.get("country") != "United States":
-        return False
-    return True
+    return {
+        "sector": stock_metadata.get("sector"),
+        "country": stock_metadata.get("country"),
+        "industry": stock_metadata.get("industry"),
+    }
 
 
 def main():
@@ -213,7 +211,12 @@ def main():
 
         # If the long pattern matches, add the symbol to the daily screener
         if all(long_condition):
-            if symbol_meets_preferred_criteria(symbol):
+            symbol_metadata = get_symbol_metadata(symbol)
+
+            if (
+                symbol_metadata["sector"] != "Real Estate"
+                and symbol_metadata["country"] == "United States"
+            ):
                 export_list.append(
                     {
                         "direction": "LONG",
@@ -231,6 +234,7 @@ def main():
                         if (day["High"] > day["ema_10"])
                         and (day["Low"] < day["ema_10"])
                         else 0,
+                        "industry": symbol_metadata["industry"],
                     }
                 )
 
@@ -254,7 +258,12 @@ def main():
 
         # If the short pattern matches, add the symbol to the daily screener
         if all(short_condition):
-            if symbol_meets_preferred_criteria(symbol):
+            symbol_metadata = get_symbol_metadata(symbol)
+
+            if (
+                symbol_metadata["sector"] != "Real Estate"
+                and symbol_metadata["country"] == "United States"
+            ):
                 export_list.append(
                     {
                         "direction": "SHORT",
@@ -272,6 +281,7 @@ def main():
                         if (day["High"] > day["ema_10"])
                         and (day["Low"] < day["ema_10"])
                         else 0,
+                        "industry": symbol_metadata["industry"],
                     }
                 )
 
