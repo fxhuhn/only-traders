@@ -61,7 +61,12 @@ def main():
         df = df[:5]
         trade = {}
         trade["date"] = row["date"]
+        try:
+            trade["signal-date"] = row["signal-date"]
+        except Exception:
+            pass
         trade["symbol"] = row["symbol"]
+        trade["industry"] = row["industry"]
         trade["direction"] = row["direction"]
         trade["kk"] = row["kk"]
         trade["sl"] = row["sl"]
