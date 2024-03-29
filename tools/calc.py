@@ -64,6 +64,39 @@ def rma(close: pd.Series, intervall: int) -> pd.Series:
     )
 
 
+def rsi(close: pd.Series, period: int = 7) -> pd.Series:
+    """
+    The relative strength index (RSI) is intended to chart the current and
+    historical strength or weakness of a stock or market based on the
+    closing prices of a recent trading period.
+
+    Args:
+        close (pd.Series): _description_
+        period (int, optional): _description_. Defaults to 7.
+
+    Returns:
+        pd.Series: _description_
+    """
+
+    # Get rid of the first row, which is NaN since it did not have a previous
+    # row to calculate the differences
+    delta = close.diff(1)
+
+    # Make the positive gains (up) and negative gains (down) Series
+    up = delta.where(delta > 0, 0.0)
+    down = -1 * delta.where(delta < 0, 0.0)
+
+    # Calculate the EWMA
+    roll_up = up.ewm(min_periods=period, adjust=False, alpha=(1 / period)).mean()
+    roll_down = down.ewm(min_periods=period, adjust=False, alpha=1 / period).mean()
+
+    # Calculate the RSI based on EWMA
+    rs = roll_up / roll_down
+    rs_index = 100.0 - (100.0 / (1.0 + rs))
+
+    return round(rs_index, 0)
+
+
 def adx(stock, n=14):
     """Calculate the Average Directional Index (ADX)
 
