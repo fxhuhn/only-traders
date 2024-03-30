@@ -73,7 +73,7 @@ def main():
         trade["tp"] = row["tp"]
         trade["risk"] = abs(row["kk"] - row["sl"])
 
-        if row["direction"] == "LONG":
+        if row["direction"] == "LONG" and len(df) > 0:
             if df.iloc[0].High > row["kk"]:
                 trade["entry"] = max(df.iloc[0].Open, row["kk"])
 
@@ -110,7 +110,7 @@ def main():
                 else:
                     print(f"{tp=}{sl=}")
 
-        if row["direction"] == "SHORT":
+        if row["direction"] == "SHORT" and len(df) > 0:
             if df.iloc[0].Low < row["kk"]:
                 trade["entry"] = min(df.iloc[0].Open, row["kk"])
 
