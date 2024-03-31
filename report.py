@@ -88,6 +88,11 @@ def main():
                     else 10
                 )
 
+                if df.iloc[0].High > row["tp"]:
+                    # skip trade
+                    tp = 99
+                    sl = 99
+
                 if len(df) < 5:
                     trade["status"] = "-"
                     trade["duration"] = len(df)
@@ -124,6 +129,11 @@ def main():
                     if any(df[1:].High > row["sl"])
                     else 10
                 )
+
+                if df.iloc[0].Low < row["tp"]:
+                    # skip trade
+                    tp = 99
+                    sl = 99
 
                 if len(df) < 5:
                     trade["status"] = "-"
