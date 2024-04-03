@@ -1,0 +1,17 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,adx_day,adx_week,up_volume,down_volume,ema_reversal,industry
+LONG,a,02.04.2024,144.47,142.0,148.99,2.2,18,27,2012920,1650560,0,Diagnostics & Research
+LONG,acva,02.04.2024,18.28,17.77,19.25,2.3,36,33,1045480,1014000,0,Auto & Truck Dealerships
+LONG,avdx,02.04.2024,12.41,12.03,13.11,2.7,13,21,1542120,1482660,0,Software—Infrastructure
+LONG,cohr,02.04.2024,59.08,56.57,63.92,2.2,16,36,1857660,1791440,0,Scientific & Technical Instruments
+LONG,dhr,02.04.2024,246.52,242.62,253.61,2.5,18,31,2612080,2334220,0,Diagnostics & Research
+LONG,hcp,02.04.2024,25.98,25.28,27.28,3.0,19,25,3961080,1488960,0,Software—Infrastructure
+LONG,infa,02.04.2024,35.02,34.08,36.81,1.8,29,56,1198880,1190880,0,Software—Infrastructure
+LONG,iot,02.04.2024,35.56,33.97,38.64,2.6,18,48,4380600,4163560,0,Software—Infrastructure
+SHORT,kdp,02.04.2024,30.62,31.14,29.68,2.1,27,21,12542920,17736480,0,Beverages—Non-Alcoholic
+LONG,mod,02.04.2024,93.88,89.7,101.96,2.7,31,62,1309040,852520,0,Auto Parts
+LONG,mstr,02.04.2024,1593.75,1413.35,1950.17,2.1,40,56,3078180,2987480,0,Software—Application
+LONG,okta,02.04.2024,102.87,100.59,107.13,2.4,29,34,1817400,1271660,0,Software—Infrastructure
+LONG,snps,02.04.2024,572.47,557.93,599.86,2.9,14,47,1240200,992320,0,Software—Infrastructure
+LONG,uber,02.04.2024,77.4,75.48,81.04,1.9,20,56,13083200,12294660,0,Software—Application
+LONG,wsc,02.04.2024,44.68,43.38,47.16,1.8,26,22,1947660,1591780,0,Rental & Leasing Services
+LONG,xpo,02.04.2024,121.43,118.58,126.76,1.9,23,50,1191660,916200,0,Trucking
