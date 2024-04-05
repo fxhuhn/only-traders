@@ -9,7 +9,7 @@ import pandas as pd
 import yfinance as yf
 from pandas_ta import adx
 
-from tools import atr, doji, ema, resample_week, sma
+from tools import atr, doji, resample_week, roc, sma
 
 
 def get_symbols() -> List[str]:
@@ -140,16 +140,17 @@ def main():
 
         # Apply the necessary indicators for stock data
         df["sma_3"] = sma(df.Close, 3)
-        df["sma_5"] = sma(df.Close, 5)
-
-        df["ema_10"] = ema(df.Close, 10)
-
         df["sma_200"] = sma(df.Close, 200)
-        df["atr_10"] = atr(df, 10, "sma")
-        df["adx_14"] = adx(df.High, df.Low, df.Close)["ADX_14"]
 
-        df["close_pct_5"] = df.Close.pct_change(5)
-        df["close_pct_60"] = df.Close.pct_change(60)
+        df["roc_60"] = roc(df.Close, 60)
+        df["roc_5"] = roc(df.Close, 5)
+
+        df["atr_10"] = atr(df, 10, "sma")
+        df["atr_10_pct"] = atr(df, 10, "sma") / df.Close
+        df["atr_20_pct"] = atr(df, 20, "sma") / df.Close
+
+        df["adx_7"] = adx(df.High, df.Low, df.Close, 7)["ADX_7"]
+        df["adx_10"] = adx(df.High, df.Low, df.Close, 10)["ADX_10"]
 
         df["high_max_3"] = df.High.rolling(window=3).max()
         df["low_min_3"] = df.Low.rolling(window=3).min()
@@ -170,6 +171,8 @@ def main():
         df["atr_distance_low_3"] = (df.Close - df.low_min_3) / df.atr_10
         df["atr_distance_high_8"] = (df.high_max_8 - df.High) / df.atr_10
         df["atr_distance_low_8"] = (df.Low - df.low_min_8) / df.atr_10
+
+        df["sma_200"] = sma(df.Close, 200) / df.Close
 
         df["down_volume"] = (
             df[(df.Close < df.sma_3) & (df.index != triple_witching_day())]
@@ -195,18 +198,18 @@ def main():
         long_condition = [
             day["close_above_sma_200"] is True,
             day["doji"] is False,
-            day["close_pct_5"] < 0,
-            day["Close"] > day["Open"],
-            not (
-                (day["prev_Open"] < day["prev_Close"])
-                and (day["prev_High"] < day["High"])
-                and (day["prev_doji"] is False)
-            ),
-            day["close_pct_60"] > 0,
+            day["Close"] < day["Open"],
+            not ((day["prev_High"] < day["High"]) and (day["prev_doji"] is False)),
             day["atr_distance_high_8"] > 1.8,
             day["atr_distance_low_3"] < 1.5,
             day["up_volume"] > day["down_volume"],
-            # week["adx_10"] > 20,
+            day["roc_60"] > 0,
+            day["roc_60"] < 150,
+            day["atr_20_pct"] > 0.04,
+            day["atr_20_pct"] < 0.1,
+            day["roc_5"] > -15,
+            day["roc_5"] < -4,
+            day["adx_7"] > 20,
         ]
 
         # If the long pattern matches, add the symbol to the daily screener
@@ -221,19 +224,16 @@ def main():
                     {
                         "direction": "LONG",
                         "symbol": symbol,
-                        "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                        "signal-date": df.iloc[-1].name.strftime("%Y-%m-%d"),
                         "kk": round(day["High"] + max(0.001 * day["Low"], 0.02), 2),
                         "sl": round(day["High"] - 0.9 * day["atr_10"], 2),
                         "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
                         "distance_tp_atr": round(day["atr_distance_high_8"], 1),
-                        "adx_day": round(day["adx_14"]),
+                        "sma_200": round(day["sma_200"], 2),
+                        "adx_day": round(day["adx_10"]),
                         "adx_week": round(week["adx_10"]),
                         "up_volume": int(day["up_volume"]),
                         "down_volume": int(day["down_volume"]),
-                        "ema_reversal": 1
-                        if (day["High"] > day["ema_10"])
-                        and (day["Low"] < day["ema_10"])
-                        else 0,
                         "industry": symbol_metadata["industry"],
                     }
                 )
@@ -242,18 +242,17 @@ def main():
         short_condition = [
             day["close_above_sma_200"] is False,
             day["doji"] is False,
-            day["close_pct_5"] > 0,
-            day["Close"] < day["Open"],
-            not (
-                (day["prev_Open"] > day["prev_Close"])
-                and (day["prev_Low"] > day["Low"])
-                and (day["prev_doji"] is False)
-            ),
-            day["close_pct_60"] < 0,
+            day["Close"] > day["Open"],
+            not ((day["prev_Low"] > day["Low"]) and (day["prev_doji"] is False)),
             day["atr_distance_low_8"] > 1.8,
             day["atr_distance_high_3"] < 1.5,
             day["up_volume"] < day["down_volume"],
-            # week["adx_10"] > 20,
+            day["roc_60"] < -1,
+            day["roc_60"] > -15,
+            day["atr_20_pct"] > 0.045,
+            day["atr_20_pct"] < 0.085,
+            day["adx_10"] < 40,
+            week["adx_10"] < 45,
         ]
 
         # If the short pattern matches, add the symbol to the daily screener
@@ -268,24 +267,29 @@ def main():
                     {
                         "direction": "SHORT",
                         "symbol": symbol,
-                        "signal-date": df.iloc[-1].name.strftime("%d.%m.%Y"),
+                        "signal-date": df.iloc[-1].name.strftime("%Y-%m-%d"),
                         "kk": round(day["Low"] - max(0.001 * day["Low"], 0.02), 2),
                         "sl": round(day["Low"] + 0.9 * day["atr_10"], 2),
                         "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
                         "distance_tp_atr": round(day["atr_distance_low_8"], 1),
-                        "adx_day": round(day["adx_14"]),
+                        "sma_200": round(day["sma_200"], 2),
+                        "adx_day": round(day["adx_10"]),
                         "adx_week": round(week["adx_10"]),
                         "up_volume": int(day["up_volume"]),
                         "down_volume": int(day["down_volume"]),
-                        "ema_reversal": 1
-                        if (day["High"] > day["ema_10"])
-                        and (day["Low"] < day["ema_10"])
-                        else 0,
                         "industry": symbol_metadata["industry"],
                     }
                 )
 
     df_screener = pd.DataFrame(export_list).sort_values(by="symbol")
+    df_long = df_screener[df_screener.direction == "LONG"].sort_values(
+        by=["sma_200"], ascending=[False]
+    )
+    df_short = df_screener[df_screener.direction == "SHORT"].sort_values(
+        by=["sma_200"], ascending=[False]
+    )
+    df_screener = pd.concat([df_long, df_short])
+
     print(df_screener)
     df_screener["symbol"].to_csv(
         f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.txt",
