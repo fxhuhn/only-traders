@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+SHORT,cort,2024-02-15,24.18,25.03,22.54,3.4,26.43,27.29179862849314,25.089133219009614,1405800.0,2032900.0,Biotechnology
+SHORT,dnli,2024-02-15,18.08,18.96,16.37,2.6,23.35,18.241739812866918,25.531566563527505,1182960.0,1183280.0,Biotechnology

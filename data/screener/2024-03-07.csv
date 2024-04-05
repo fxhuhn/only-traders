@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,beam,2024-03-06,40.12,36.64,46.96,2.5,27.77,43.91366760449968,26.319650529024866,2685580.0,1410620.0,Biotechnology
+LONG,rxrx,2024-03-06,12.15,10.78,14.83,2.4,9.16,26.2123889937941,38.279201480387776,16258880.0,6935600.0,Biotechnology

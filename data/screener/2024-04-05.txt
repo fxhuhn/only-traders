@@ -1,3 +1,2 @@
-eqt
-plnt
-xel
+iot
+gps

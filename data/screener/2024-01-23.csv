@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,arwr,2024-01-22,33.96,31.96,37.87,2.7,30.92,26.53873724592481,23.4160088284756,2611240.0,1372080.0,Biotechnology
+LONG,metc,2024-01-22,19.59,18.26,22.2,2.1,11.23,30.40765077235975,60.64913966614305,1510840.0,1170980.0,Coking Coal

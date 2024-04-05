@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,arwr,2024-01-17,34.8,32.39,39.52,1.9,30.8,31.628743077761595,23.341534514944602,3550820.0,1389560.0,Biotechnology
+LONG,hood,2024-01-17,10.76,10.22,11.78,3.2,10.21,26.220812240563557,29.735942691448013,11486740.0,11307840.0,Capital Markets

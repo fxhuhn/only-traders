@@ -1,4 +1,0 @@
-hpe
-net
-pltr
-ttd

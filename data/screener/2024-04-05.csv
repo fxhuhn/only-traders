@@ -1,4 +1,3 @@
-direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,adx_day,adx_week,up_volume,down_volume,ema_reversal,industry
-SHORT,eqt,04.04.2024,36.62,37.39,35.2,2.8,25,25,7228160,10314285,0,Oil & Gas E&P
-SHORT,plnt,04.04.2024,62.52,64.61,58.53,2.3,24,23,1976260,2193515,0,Leisure
-SHORT,xel,04.04.2024,53.39,54.28,51.77,2.0,24,29,3791000,4168909,0,Utilities—Regulated Electric
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,iot,2024-04-04,35.41,33.88,38.39,2.7,0.87,19,48,4380600,2934040,Software - Infrastructure
+LONG,gps,2024-04-04,26.22,25.36,27.87,2.3,0.63,48,50,9876240,7567237,Apparel Retail

@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+SHORT,cc,2024-03-08,25.29,27.65,20.66,3.9,30.52,28.05863053759118,27.278493084169597,2979180.0,7591920.0,Specialty Chemicals
+LONG,verv,2024-03-08,16.05,14.6,18.89,2.1,14.46,36.763481755272146,17.84810462890877,1439480.0,1038760.0,Biotechnology

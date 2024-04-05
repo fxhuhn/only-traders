@@ -1,3 +1,2 @@
-direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,adx_day,adx_week,up_volume,down_volume,ema_reversal,industry
-LONG,gct,27.03.2024,26.87,22.54,35.44,3.0,15,48,3939940,3673820,0,Software—Infrastructure
-LONG,spir,27.03.2024,12.51,10.41,16.65,3.0,33,62,2361060,1213980,0,Specialty Business Services
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,anf,2024-03-27,123.85,118.62,133.95,2.7,73.11,24.804020792890086,84.24710329859616,1979460.0,1767140.0,Apparel Retail
