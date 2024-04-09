@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,iot,2024-04-08,34.43,33.09,37.03,3.8,0.87,20,47,4380600,2424100,Software—Infrastructure
+LONG,ges,2024-04-08,31.01,29.85,33.25,2.0,0.75,40,44,2006260,1462220,Apparel Retail
+LONG,gps,2024-04-08,24.49,23.69,26.04,3.9,0.67,42,47,9876240,7558580,Apparel Retail
