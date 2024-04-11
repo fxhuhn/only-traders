@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,ges,2024-04-10,29.26,28.04,31.61,3.2,0.8,33,41,2006260,1527220,Apparel Retail
+LONG,anf,2024-04-10,118.26,112.8,128.84,2.7,0.67,19,76,1538920,1498660,Apparel Retail
+LONG,iova,2024-04-10,12.75,12.04,14.12,2.6,0.63,17,52,6429220,4402400,Biotechnology
