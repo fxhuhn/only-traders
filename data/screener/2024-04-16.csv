@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,cohr,2024-04-15,54.14,52.22,57.83,3.2,0.86,22,29,1857660,1292260,Scientific & Technical Instruments
+LONG,ges,2024-04-15,27.93,26.86,29.97,3.6,0.84,30,39,2006260,1937100,Apparel Retail
+LONG,gps,2024-04-15,22.9,21.99,24.66,3.4,0.74,38,43,9191320,7365860,Apparel Retail
+LONG,iova,2024-04-15,12.55,11.82,13.95,2.1,0.68,20,49,5532340,5084120,Biotechnology
