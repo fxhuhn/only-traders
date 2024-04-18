@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,bv,2024-04-17,11.28,10.77,12.23,1.9,0.78,31,40,1047400,940480,Specialty Business Services
+LONG,arhs,2024-04-17,14.7,14.11,15.81,3.0,0.77,28,44,1277520,1056320,Home Improvement Retail
+LONG,infa,2024-04-17,35.71,34.08,38.88,2.3,0.74,25,55,5036060,4442080,Software—Infrastructure
+LONG,iova,2024-04-17,12.14,11.45,13.45,2.0,0.69,23,49,5532340,5013720,Biotechnology
