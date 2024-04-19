@@ -1,0 +1,10 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,cohr,2024-04-18,52.05,50.37,55.26,3.8,0.88,29,30,1969100,1481640,Scientific & Technical Instruments
+LONG,play,2024-04-18,54.82,52.66,58.98,4.1,0.88,26,48,2060860,1880020,Entertainment
+LONG,pltr,2024-04-18,21.45,20.7,22.89,2.2,0.88,16,39,33989440,33062660,Software—Infrastructure
+LONG,tndm,2024-04-18,32.17,30.6,35.22,1.8,0.83,21,33,1205680,989620,Medical Devices
+LONG,arhs,2024-04-18,14.68,14.09,15.79,3.1,0.8,28,43,1277520,1088060,Home Improvement Retail
+LONG,gps,2024-04-18,21.72,20.84,23.41,2.2,0.78,41,42,9191320,7744180,Apparel Retail
+LONG,lyft,2024-04-18,17.47,16.59,19.18,2.2,0.78,21,46,12024060,9874680,Software—Application
+LONG,mu,2024-04-18,117.73,112.68,127.5,1.8,0.72,44,39,32106380,23504720,Semiconductors
+LONG,app,2024-04-18,71.9,68.52,78.45,2.1,0.65,27,60,3945140,3115380,Software—Application
