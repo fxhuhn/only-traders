@@ -77,7 +77,8 @@ def get_stocks(symbols: List[str]) -> Dict[str, pd.DataFrame]:
                 df = df.dropna()
                 df.index = pd.to_datetime(df.index)
 
-                dfs[symbol.lower()] = df
+                if len(df) > 0:
+                    dfs[symbol.lower()] = df
 
         # save the current stock data for later activities
         with open(filename, "wb") as file:
@@ -281,26 +282,27 @@ def main():
                     }
                 )
 
-    df_screener = pd.DataFrame(export_list).sort_values(by="symbol")
-    df_long = df_screener[df_screener.direction == "LONG"].sort_values(
-        by=["sma_200"], ascending=[False]
-    )
-    df_short = df_screener[df_screener.direction == "SHORT"].sort_values(
-        by=["sma_200"], ascending=[False]
-    )
-    df_screener = pd.concat([df_long, df_short])
+    if len(export_list):
+        df_screener = pd.DataFrame(export_list).sort_values(by="symbol")
+        df_long = df_screener[df_screener.direction == "LONG"].sort_values(
+            by=["sma_200"], ascending=[False]
+        )
+        df_short = df_screener[df_screener.direction == "SHORT"].sort_values(
+            by=["sma_200"], ascending=[False]
+        )
+        df_screener = pd.concat([df_long, df_short])
 
-    print(df_screener)
-    df_screener["symbol"].to_csv(
-        f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.txt",
-        header=None,
-        index=None,
-        sep=" ",
-        mode="a",
-    )
-    df_screener.to_csv(
-        f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.csv", index=False
-    )
+        print(df_screener)
+        df_screener["symbol"].to_csv(
+            f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.txt",
+            header=None,
+            index=None,
+            sep=" ",
+            mode="a",
+        )
+        df_screener.to_csv(
+            f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.csv", index=False
+        )
 
 
 if __name__ == "__main__":
