@@ -303,6 +303,8 @@ def main():
         df_screener.to_csv(
             f"./data/screener/{datetime.datetime.now():%Y-%m-%d}.csv", index=False
         )
+    else:
+        print("No Trades for today!")
 
 
 if __name__ == "__main__":
