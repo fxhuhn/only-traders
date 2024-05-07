@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+SHORT,wolf,2024-05-06,25.15,27.08,21.38,2.2,1.4,17,30,4756540,8147180,Semiconductors
+SHORT,arry,2024-05-06,13.43,14.12,12.12,2.5,1.23,22,19,5054460,6135620,Solar
+SHORT,vsat,2024-05-06,17.4,18.21,15.84,2.6,1.23,14,24,916240,1117360,Communication Equipment
+SHORT,enph,2024-05-06,113.89,120.52,100.97,2.2,1.02,10,13,4836720,5141860,Solar
