@@ -9,7 +9,7 @@ import pandas as pd
 import yfinance as yf
 from pandas_ta import adx
 
-from tools import atr, doji, resample_week, roc, sma
+from tools import atr, doji, get_symbols_with_earnings, resample_week, roc, sma
 
 
 def get_symbols() -> List[str]:
@@ -291,6 +291,11 @@ def main():
             by=["sma_200"], ascending=[False]
         )
         df_screener = pd.concat([df_long, df_short])
+
+        allowed_symbols = set(df_screener.symbol).difference(
+            set(get_symbols_with_earnings())
+        )
+        df_screener = df_screener[df_screener.symbol.isin(allowed_symbols)]
 
         print(df_screener)
         df_screener["symbol"].to_csv(
