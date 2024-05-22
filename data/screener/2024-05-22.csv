@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,w,2024-05-21,66.88,63.53,73.41,2.6,0.91,33,19,5343160,3391420,Internet Retail
+LONG,twst,2024-05-21,45.12,42.85,49.54,2.2,0.66,44,35,1184600,840120,Diagnostics & Research
