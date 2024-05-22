@@ -229,6 +229,13 @@ def main():
                         "kk": round(day["High"] + max(0.001 * day["Low"], 0.02), 2),
                         "sl": round(day["High"] - 0.9 * day["atr_10"], 2),
                         "tp": round(day["High"] + 1.8 * day["atr_10"], 2),
+                        "qty": int(
+                            100
+                            / abs(
+                                round(day["Low"] - max(0.001 * day["Low"], 0.02), 2)
+                                - round(day["Low"] + 0.9 * day["atr_10"], 2)
+                            )
+                        ),
                         "distance_tp_atr": round(day["atr_distance_high_8"], 1),
                         "sma_200": round(day["sma_200"], 2),
                         "adx_day": round(day["adx_10"]),
@@ -272,6 +279,13 @@ def main():
                         "kk": round(day["Low"] - max(0.001 * day["Low"], 0.02), 2),
                         "sl": round(day["Low"] + 0.9 * day["atr_10"], 2),
                         "tp": round(day["Low"] - 1.8 * day["atr_10"], 2),
+                        "qty": int(
+                            100
+                            / abs(
+                                round(day["Low"] - max(0.001 * day["Low"], 0.02), 2)
+                                - round(day["Low"] + 0.9 * day["atr_10"], 2)
+                            )
+                        ),
                         "distance_tp_atr": round(day["atr_distance_low_8"], 1),
                         "sma_200": round(day["sma_200"], 2),
                         "adx_day": round(day["adx_10"]),
