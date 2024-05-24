@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,lmnd,2024-05-23,16.74,15.65,18.86,91,2.9,0.97,19,48,2567200,1285280,Insurance—Property & Casualty
+LONG,w,2024-05-23,62.88,59.84,68.78,32,3.5,0.95,29,18,5343160,3171160,Internet Retail
+LONG,tds,2024-05-23,19.49,18.59,21.23,111,2.0,0.94,30,23,3072500,906540,Telecom Services
+LONG,www,2024-05-23,13.13,12.75,13.83,263,3.3,0.73,42,27,1810860,674940,Footwear & Accessories
