@@ -1,0 +1,7 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,bros,2024-05-24,34.78,33.57,37.11,82,2.8,0.85,44,25,4673200,1992160,Restaurants
+LONG,snap,2024-05-24,15.51,15.0,16.48,196,2.1,0.81,28,27,25801320,14356700,Internet Content & Information
+LONG,tost,2024-05-24,25.86,25.04,27.41,121,2.4,0.79,30,33,7506040,6572020,Software—Infrastructure
+LONG,crnx,2024-05-24,49.51,47.49,53.4,49,1.9,0.73,29,53,1135980,1014560,Biotechnology
+LONG,oscr,2024-05-24,21.19,20.27,22.97,108,2.3,0.54,49,56,2908160,2841420,Healthcare Plans
+LONG,cvna,2024-05-24,112.9,107.78,122.82,19,1.9,0.53,36,51,5364020,2576680,Auto & Truck Dealerships
