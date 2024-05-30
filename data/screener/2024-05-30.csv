@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,ptct,2024-05-29,36.52,34.46,40.56,48,1.9,0.8,39,27,1251740,821120,Biotechnology
+LONG,crbg,2024-05-29,29.75,28.54,32.08,82,2.3,0.79,32,49,7186800,3410540,Asset Management
+LONG,sg,2024-05-29,30.66,28.82,34.25,54,1.9,0.52,36,44,7967340,2496280,Restaurants
