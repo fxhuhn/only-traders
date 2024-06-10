@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,be,2024-06-07,15.13,14.06,17.22,93,2.2,0.83,50,29,13662400,9080460,Electrical Equipment & Parts
+LONG,aa,2024-06-07,41.91,40.33,44.95,63,2.1,0.75,30,34,5334200,4496960,Aluminum
+LONG,gps,2024-06-07,26.12,24.54,29.19,63,2.6,0.73,29,31,23727240,10089300,Apparel Retail
