@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,vir,2024-06-13,10.46,9.6,12.11,116,2.8,0.94,29,25,1578000,1421080,Biotechnology
+LONG,tds,2024-06-13,20.52,19.36,22.79,86,2.2,0.89,29,20,2598580,1023460,Telecom Services
+LONG,aa,2024-06-13,39.89,38.36,42.84,65,2.1,0.8,24,33,5334200,3610700,Aluminum
+LONG,tndm,2024-06-13,47.52,45.29,51.83,44,2.5,0.63,33,48,1321340,1260360,Medical Devices
