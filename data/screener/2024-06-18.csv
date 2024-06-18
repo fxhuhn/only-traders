@@ -1,0 +1,10 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,flnc,2024-06-17,20.88,19.23,24.12,60,2.4,1.0,20,25,2598600,2170440,Utilities—Renewable
+LONG,enph,2024-06-17,124.32,117.86,136.87,15,2.5,0.95,25,14,3091020,3062540,Solar
+LONG,tds,2024-06-17,19.62,18.68,21.44,106,3.2,0.93,24,18,2598580,1186340,Telecom Services
+LONG,be,2024-06-17,14.27,13.37,16.01,111,2.0,0.88,40,29,6328180,5402000,Electrical Equipment & Parts
+LONG,aa,2024-06-17,37.77,36.33,40.54,69,3.4,0.83,24,30,5334200,3644500,Aluminum
+LONG,tdw,2024-06-17,97.94,93.21,107.09,21,2.0,0.8,22,36,1436840,894540,Oil & Gas Equipment & Services
+LONG,tndm,2024-06-17,44.96,42.9,48.97,48,3.9,0.67,33,45,1321340,1068860,Medical Devices
+LONG,fslr,2024-06-17,274.33,259.1,304.03,6,2.0,0.66,46,43,3270240,3138160,Solar
+LONG,sg,2024-06-17,31.89,29.55,36.49,42,1.9,0.55,27,43,2990360,2411500,Restaurants
