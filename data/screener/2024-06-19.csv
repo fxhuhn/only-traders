@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,be,2024-06-18,14.04,13.2,15.66,119,2.4,0.9,37,29,6328180,5533580,Electrical Equipment & Parts
+LONG,mrna,2024-06-18,137.4,131.36,149.1,16,2.5,0.77,24,45,4014940,3251260,Biotechnology
