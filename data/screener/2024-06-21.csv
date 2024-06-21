@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,tds,2024-06-20,19.33,18.45,21.02,114,2.1,0.96,21,18,2598580,1308540,Telecom Services
+LONG,tdw,2024-06-20,98.86,94.2,107.91,21,1.8,0.82,19,36,1436840,1083920,Oil & Gas Equipment & Services
+LONG,hood,2024-06-20,22.09,21.04,24.12,95,1.9,0.64,29,55,21815060,12709600,Capital Markets
