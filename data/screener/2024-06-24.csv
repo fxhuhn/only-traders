@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,mrna,2024-06-21,136.49,131.02,147.03,18,2.4,0.77,26,45,4014940,3938520,Biotechnology
+LONG,arhs,2024-06-21,17.84,17.08,19.3,131,2.4,0.73,33,37,1499000,1196140,Home Improvement Retail
+LONG,tndm,2024-06-21,43.12,41.36,46.52,56,3.5,0.67,35,45,1264420,1132480,Medical Devices
+LONG,anf,2024-06-21,175.31,168.0,189.41,13,2.4,0.59,49,68,1486800,1359400,Apparel Retail
