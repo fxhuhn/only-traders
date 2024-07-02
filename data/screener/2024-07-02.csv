@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+SHORT,asan,2024-07-01,13.76,14.37,12.61,163,3.8,1.23,19,29,2647320,2817260,Software—Application
+SHORT,cxw,2024-07-01,12.8,13.22,12.01,238,3.5,1.03,39,34,1241240,2309860,Security & Protection Services
