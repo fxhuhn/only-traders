@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,ptct,2024-07-02,31.36,29.12,35.74,44,2.6,0.91,26,26,1314320,1266180,Biotechnology
+SHORT,cxw,2024-07-02,13.34,13.76,12.55,238,4.7,1.03,37,34,1166140,2309860,Security & Protection Services
