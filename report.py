@@ -160,6 +160,9 @@ def main():
         export_list.append(trade)
 
     df_report = pd.DataFrame(export_list).sort_values(by="date")
+    df_report.drop_duplicates(
+        subset=["symbol", "signal-date"], keep="last", inplace=True
+    )
     df_report["r_sum"] = df_report["r"].cumsum()
     df_report["r_sum"] = df_report["r_sum"].round(1)
     df_report["r"] = df_report["r"].round(1)
