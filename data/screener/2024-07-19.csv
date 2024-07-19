@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,amd,2024-07-18,163.56,155.23,179.77,12,2.6,0.98,31,19,62990900,55976320,Semiconductors
+LONG,mu,2024-07-18,121.75,116.72,131.49,19,2.7,0.84,19,39,26786620,25783420,Semiconductors
+LONG,sgh,2024-07-18,25.87,24.17,29.22,58,2.1,0.83,39,25,2535940,1801120,Semiconductors
+LONG,smci,2024-07-18,835.72,785.21,934.44,1,2.3,0.79,25,26,6270100,6082180,Computer Hardware
