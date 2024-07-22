@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,dnli,2024-07-19,22.17,21.22,24.0,105,1.9,0.91,22,23,1257960,745320,Biotechnology
+LONG,mu,2024-07-19,117.32,112.52,126.59,20,3.7,0.87,22,39,26792100,24311500,Semiconductors
+LONG,fun,2024-07-19,51.84,49.85,55.68,50,2.0,0.82,27,47,2394420,2317880,Leisure
+LONG,wsm,2024-07-19,150.44,144.2,162.48,16,2.0,0.81,24,35,1609080,1303240,Specialty Retail
