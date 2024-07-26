@@ -1,0 +1,6 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,fun,2024-07-25,48.05,46.35,51.29,58,3.6,0.89,26,45,2176780,1353000,Leisure
+LONG,sgh,2024-07-25,23.5,22.27,25.89,81,4.5,0.89,30,26,2490660,1191240,Semiconductors
+LONG,geo,2024-07-25,15.82,15.06,17.28,131,2.7,0.8,35,42,3279740,2285900,Security & Protection Services
+LONG,oust,2024-07-25,14.02,12.76,16.48,79,2.1,0.57,41,44,1712200,970360,Electronic Components
+LONG,amsc,2024-07-25,26.99,24.67,31.58,43,2.2,0.56,30,67,1546660,1465920,Specialty Industrial Machinery
