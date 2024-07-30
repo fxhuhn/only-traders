@@ -1,0 +1,6 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,fun,2024-07-29,47.44,45.73,50.72,58,2.5,0.89,29,43,1446880,1353000,Leisure
+LONG,geo,2024-07-29,15.86,15.22,17.08,156,2.3,0.82,30,41,3133940,2281180,Security & Protection Services
+LONG,anf,2024-07-29,155.28,148.41,168.58,14,1.8,0.78,27,58,3064620,1553920,Apparel Retail
+LONG,gme,2024-07-29,24.4,22.98,27.17,70,2.6,0.73,24,63,16252300,10439860,Specialty Retail
+LONG,hood,2024-07-29,21.86,20.8,23.93,94,2.2,0.73,23,52,16535880,9809260,Capital Markets
