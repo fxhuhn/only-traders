@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,anf,2024-08-01,150.86,144.38,163.41,15,1.8,0.84,33,57,3064620,1536220,Apparel Retail
+LONG,gme,2024-08-01,23.11,21.96,25.34,87,2.1,0.8,24,62,16252300,8474120,Specialty Retail
+LONG,lnth,2024-08-01,105.9,100.64,116.11,19,2.1,0.72,37,46,3393360,1663480,Drug Manufacturers—Specialty & Generic
