@@ -1,0 +1,7 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,anf,2024-08-02,136.6,129.41,150.58,13,3.0,0.9,36,56,3064620,1632320,Apparel Retail
+LONG,chwy,2024-08-02,22.83,21.74,24.95,91,2.9,0.88,28,46,5237020,5164360,Internet Retail
+LONG,colb,2024-08-02,24.21,23.12,26.33,91,2.4,0.88,54,29,3103300,2429060,Banks—Regional
+LONG,wal,2024-08-02,74.08,70.95,80.13,31,2.5,0.82,48,23,1462780,1263620,Banks—Regional
+LONG,ftai,2024-08-02,105.04,98.74,117.34,15,1.8,0.64,27,71,1907560,1290100,Rental & Leasing Services
+LONG,rna,2024-08-02,42.21,39.92,46.67,43,2.7,0.5,36,69,1155100,1105060,Biotechnology
