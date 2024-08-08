@@ -1,0 +1,9 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,ions,2024-08-07,48.03,46.26,51.42,56,1.9,0.98,31,34,1414060,1407360,Biotechnology
+LONG,pfs,2024-08-07,17.21,16.42,18.74,126,2.2,0.94,42,28,1100860,1010580,Banks—Regional
+LONG,hlit,2024-08-07,13.56,12.76,15.11,124,2.0,0.92,30,20,2793900,1466220,Communication Equipment
+LONG,hope,2024-08-07,12.25,11.72,13.26,188,2.4,0.92,39,26,1315460,980460,Banks—Regional
+LONG,colb,2024-08-07,23.92,22.76,26.19,86,2.5,0.91,43,31,3103300,1929420,Banks—Regional
+LONG,zion,2024-08-07,47.57,45.67,51.23,52,2.6,0.91,42,28,2218660,2184220,Banks—Regional
+LONG,cort,2024-08-07,35.05,32.82,39.41,44,1.9,0.8,34,37,1828340,1001580,Biotechnology
+LONG,lnth,2024-08-07,99.54,93.89,110.55,17,2.6,0.74,41,43,3591260,1534120,Drug Manufacturers—Specialty & Generic
