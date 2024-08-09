@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,hope,2024-08-08,11.92,11.43,12.84,204,3.2,0.92,37,26,1315460,830680,Banks—Regional
+LONG,wttr,2024-08-08,11.09,10.56,12.1,188,2.1,0.81,25,39,1667480,1175420,Specialty Chemicals
+LONG,cort,2024-08-08,34.79,32.64,39.01,46,2.1,0.8,31,37,1828340,927300,Biotechnology
+LONG,nvri,2024-08-08,11.13,10.52,12.28,163,2.6,0.75,49,36,1325760,736620,Waste Management
