@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,hlit,2024-08-09,13.26,12.44,14.84,121,1.8,0.9,27,20,2674180,1466220,Communication Equipment
+LONG,tph,2024-08-09,40.96,39.29,44.18,59,3.4,0.88,36,32,1393580,916020,Residential Construction
+SHORT,sq,2024-08-09,60.64,63.54,55.01,34,1.8,1.09,30,26,6713340,11885660,Software—Infrastructure
+SHORT,aeo,2024-08-09,20.82,21.78,18.97,104,2.1,1.01,21,22,4222960,4771760,Apparel Retail
