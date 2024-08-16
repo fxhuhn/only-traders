@@ -1,0 +1,7 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,gh,2024-08-15,30.05,27.91,34.25,46,1.8,0.86,22,50,3411840,2927400,Diagnostics & Research
+SHORT,afrm,2024-08-15,27.17,28.69,24.21,65,2.0,1.2,19,18,5137620,6187360,Software—Infrastructure
+SHORT,acmr,2024-08-15,19.59,20.83,17.16,80,3.7,1.08,25,22,1502280,1879580,Semiconductor Equipment & Materials
+SHORT,amd,2024-08-15,141.67,148.29,128.85,15,1.9,1.06,30,22,40311600,72245540,Semiconductors
+SHORT,be,2024-08-15,11.53,12.41,9.82,113,1.8,1.03,20,20,5904500,6815820,Electrical Equipment & Parts
+SHORT,azek,2024-08-15,40.75,42.96,36.45,45,2.2,1.01,21,29,2272900,3077100,Building Products & Equipment
