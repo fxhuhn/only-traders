@@ -1,0 +1,7 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+SHORT,u,2024-08-21,16.84,17.61,15.37,129,2.4,1.48,29,43,7348660,11128460,Software—Application
+SHORT,asan,2024-08-21,13.55,14.01,12.69,217,2.6,1.19,22,26,1293960,1937060,Software—Application
+SHORT,gtlb,2024-08-21,46.41,47.99,43.4,63,2.8,1.18,23,21,1222160,2611560,Software—Infrastructure
+SHORT,ntla,2024-08-21,23.22,24.27,21.17,95,1.9,1.11,24,13,1098120,1329960,Biotechnology
+SHORT,dkng,2024-08-21,34.68,36.02,32.1,74,3.7,1.09,29,16,9611500,11125860,Gambling
+SHORT,lrcx,2024-08-21,859.58,889.16,803.0,3,1.9,1.01,35,32,1012980,2047320,Semiconductor Equipment & Materials
