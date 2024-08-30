@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,sg,2024-08-29,32.98,30.86,37.13,47,2.4,0.66,26,31,4299140,3389380,Restaurants
+SHORT,frog,2024-08-29,27.52,28.36,25.93,119,1.8,1.27,39,26,1282820,1578040,Software—Application
