@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,tgtx,2024-09-05,22.3,21.15,24.55,86,2.7,0.8,34,32,4386760,2807580,Biotechnology
+LONG,spry,2024-09-05,12.17,11.49,13.46,147,2.8,0.72,29,43,1837480,1007780,Biotechnology
+LONG,cvna,2024-09-05,145.39,139.45,156.84,16,2.2,0.63,22,50,2680180,2143993,Auto & Truck Dealerships
