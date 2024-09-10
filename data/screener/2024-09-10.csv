@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,lite,2024-09-09,52.45,50.02,57.15,41,2.1,0.96,29,17,1510420,1382200,Communication Equipment
+LONG,cvna,2024-09-09,138.53,132.58,150.05,16,3.2,0.67,27,47,2680180,2336540,Auto & Truck Dealerships
