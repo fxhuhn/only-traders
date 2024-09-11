@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,upst,2024-09-10,35.29,32.56,40.66,36,3.5,0.87,36,25,6031760,5964440,Credit Services
+LONG,run,2024-09-10,17.48,16.52,19.33,104,3.2,0.84,27,24,6961820,6466460,Solar
+LONG,smtc,2024-09-10,40.48,38.15,45.01,42,1.9,0.73,31,27,3090620,1452460,Semiconductors
