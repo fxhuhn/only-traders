@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,lmnd,2024-09-11,17.74,16.87,19.41,114,1.8,1.0,20,27,1103300,929460,Insurance—Property & Casualty
+LONG,rkt,2024-09-11,18.85,18.11,20.27,135,2.4,0.75,30,51,3678480,3124260,Mortgage Finance
