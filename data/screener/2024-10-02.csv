@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,docn,2024-10-01,40.42,38.72,43.69,58,1.9,0.94,28,17,2344800,1023100,Software—Infrastructure
+LONG,afrm,2024-10-01,41.05,38.89,45.24,46,2.1,0.93,31,29,13549760,6297460,Software—Infrastructure
+LONG,oscr,2024-10-01,21.63,20.56,23.72,93,1.9,0.79,26,21,2805800,2593860,Healthcare Plans
