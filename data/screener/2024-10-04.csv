@@ -1,0 +1,4 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,cwh,2024-10-03,23.42,22.61,24.98,123,2.7,1.0,24,29,978420,930200,Auto & Truck Dealerships
+LONG,nclh,2024-10-03,19.94,19.21,21.34,136,2.1,0.93,30,19,14044340,11573520,Travel Services
+LONG,vsco,2024-10-03,24.92,23.95,26.79,104,2.1,0.91,21,19,2371800,1888800,Apparel Retail
