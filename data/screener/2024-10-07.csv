@@ -1,0 +1,2 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,run,2024-10-04,17.37,16.59,18.86,128,2.5,0.9,17,21,6999440,5440780,Solar
