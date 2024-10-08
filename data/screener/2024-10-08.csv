@@ -1,0 +1,5 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,afrm,2024-10-07,39.63,37.72,43.33,52,2.0,0.92,25,28,12346900,5368152,Software—Infrastructure
+LONG,sava,2024-10-07,27.46,25.12,32.06,42,1.8,0.89,21,41,1805080,1557280,Biotechnology
+LONG,tgtx,2024-10-07,22.35,21.54,23.91,123,2.4,0.85,21,25,3166060,2625280,Biotechnology
+LONG,z,2024-10-07,62.46,60.48,66.23,50,2.3,0.84,36,22,4904580,2745675,Internet Content & Information
