@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,chwy,2024-10-24,27.85,26.89,29.67,104,2.2,0.81,18,45,5374360,4301580,Internet Retail
+LONG,cdna,2024-10-24,23.85,22.13,27.23,58,2.9,0.74,39,40,852720,790720,Diagnostics & Research
