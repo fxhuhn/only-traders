@@ -1,0 +1,3 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,afrm,2024-10-25,42.51,40.19,47.02,43,2.4,0.87,22,31,14260080,5758160,Software—Infrastructure
+LONG,chwy,2024-10-25,27.38,26.47,29.11,109,2.8,0.82,19,45,5374360,3821940,Internet Retail
