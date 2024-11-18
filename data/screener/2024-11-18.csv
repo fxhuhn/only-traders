@@ -1,0 +1,2 @@
+direction,symbol,signal-date,kk,sl,tp,qty,distance_tp_atr,sma_200,adx_day,adx_week,up_volume,down_volume,industry
+LONG,agio,2024-11-15,55.72,52.69,61.63,33,2.1,0.73,37,51,1243920,793540,Biotechnology
